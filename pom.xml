@@ -7,7 +7,6 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.malloc</groupId>
 	<artifactId>taskmanager</artifactId>
