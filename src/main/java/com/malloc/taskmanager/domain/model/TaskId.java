@@ -2,9 +2,7 @@ package com.malloc.taskmanager.domain.model;
 
 import java.util.Objects;
 import java.util.UUID;
-import lombok.Getter;
 
-@Getter
 public class TaskId {
   private final String value;
 
@@ -16,6 +14,9 @@ public class TaskId {
     this.value = value;
   }
 
+  public String getValue() {
+    return value;
+  }
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

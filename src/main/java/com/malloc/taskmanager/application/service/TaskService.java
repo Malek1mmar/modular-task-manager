@@ -4,7 +4,9 @@ import com.malloc.taskmanager.application.port.in.TaskUseCase;
 import com.malloc.taskmanager.application.port.out.TaskRepository;
 import com.malloc.taskmanager.domain.model.Task;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TaskService implements TaskUseCase {
 
   private final TaskRepository taskRepository;
