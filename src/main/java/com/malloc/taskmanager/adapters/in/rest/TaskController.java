@@ -8,6 +8,7 @@ import com.malloc.taskmanager.application.port.in.TaskUseCase;
 import com.malloc.taskmanager.application.port.in.command.CreateTaskCommand;
 import com.malloc.taskmanager.domain.model.Task;
 import java.util.Optional;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ public class TaskController {
         request.title(),
         request.description()
     ));
-    return null;
+    return ResponseEntity.status(HttpStatus.CREATED).build();
   }
 
   @GetMapping("/{id}")
