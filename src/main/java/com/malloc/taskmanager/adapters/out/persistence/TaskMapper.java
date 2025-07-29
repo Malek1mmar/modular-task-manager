@@ -3,20 +3,18 @@ package com.malloc.taskmanager.adapters.out.persistence;
 
 import com.malloc.taskmanager.domain.model.Task;
 import com.malloc.taskmanager.domain.model.TaskId;
-import com.malloc.taskmanager.domain.model.TaskStatus;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TaskMapper {
 
   public TaskEntity toEntity(Task task) {
-    return new TaskEntity(
-        task.getId().toString(),
-        task.getTitle(),
-        task.getDescription(),
-        task.getStatus(),
-        null, null
-    );
+    TaskEntity entity = new TaskEntity();
+    entity.setId(task.getId() != null ? task.getId().getValue() : null);
+    entity.setTitle(task.getTitle());
+    entity.setDescription(task.getDescription());
+    entity.setStatus(task.getStatus());
+    return entity;
   }
 
   public Task toDomain(TaskEntity entity) {
@@ -24,7 +22,7 @@ public class TaskMapper {
         new TaskId(entity.getId()),
         entity.getTitle(),
         entity.getDescription(),
-        TaskStatus.valueOf(String.valueOf(entity.getStatus()))
+        entity.getStatus()
     );
   }
 }

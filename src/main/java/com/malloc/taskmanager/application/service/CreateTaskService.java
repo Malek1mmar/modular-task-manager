@@ -6,8 +6,9 @@ import com.malloc.taskmanager.application.port.in.command.CreateTaskCommand;
 import com.malloc.taskmanager.application.port.out.TaskRepository;
 import com.malloc.taskmanager.domain.model.Task;
 import com.malloc.taskmanager.domain.model.TaskId;
-import java.time.Instant;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateTaskService implements CreateTaskUseCase {
 
   private final TaskRepository taskRepository;
@@ -16,6 +17,7 @@ public class CreateTaskService implements CreateTaskUseCase {
     this.taskRepository = taskRepository;
   }
 
+
   @Override
   public Task createTask(CreateTaskCommand command) {
     Task task = new Task(
@@ -23,7 +25,6 @@ public class CreateTaskService implements CreateTaskUseCase {
         command.title(),
         command.description()
     );
-
     return taskRepository.save(task);
   }
 }
