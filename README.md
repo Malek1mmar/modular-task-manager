@@ -29,13 +29,13 @@ This project follows **Hexagonal Architecture** (a.k.a. Ports and Adapters), whe
 
 This project uses basic DDD building blocks:
 
-| DDD Concept     | Example                                  |
-|----------------|-------------------------------------------|
-| **Entity**      | `Task`, `User`                            |
-| **Value Object**| `TaskId`                                  |
-| **Aggregate**   | `Task` as the root                        |
-| **Repository**  | `TaskRepository` (domain interface)       |
-| **Service**     | `TaskService` (application-level logic)   |
+| DDD Concept     | Example                                |
+|----------------|-----------------------------------------|
+| **Entity**      | `Task`                                 |
+| **Value Object**| `TaskId`                               |
+| **Aggregate**   | `Task` as the root of the aggregate    |
+| **Repository**  | `TaskRepository` (domain port)         |
+| **Service**     | `TaskService` (application-level logic)|
 
 ---
 
